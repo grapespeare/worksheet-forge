@@ -2,11 +2,16 @@
 
 Create learning activities, worksheets, and interactive lessons for any subject.
 
+## Live URLs
+
+- **Cloudflare Workers**: https://worksheet-forge.grapespeare.workers.dev
+- **Kimi Deployment**: https://4xt3ejnj67qbo.kimi.page
+
 ## Features
 
 - **28 Element Types** — Text, headings, questions, multiple choice, fill-in-blank, tables, diagrams, number lines, graph paper, handwriting lines, equations, reading passages, vocabulary boxes, story maps, character analysis, compare/contrast, art critique, drawing prompts, technique grids, color studies, blackout poetry, word search, crossword, flashcards, BINGO, Mad Libs, and matching games.
-- **Interactive Tools** — Blackout poetry engine, word search generator, crossword puzzle builder, flashcard study mode, BINGO card creator, Mad Libs story builder, and matching pair games.
-- **Mobile Editor** — Full worksheet creation on phones with touch-optimized canvas, pinch-zoom, bottom sheets, and gesture support.
+- **8 Interactive Tools** — Blackout poetry engine, word search generator, crossword puzzle builder, flashcard study mode, BINGO card creator, Mad Libs story builder, and matching pair games.
+- **Mobile Editor** — Full worksheet creation on phones with touch-optimized canvas, pinch-zoom, bottom sheets, gesture support, floating Edit/Delete actions, and double-tap to edit.
 - **PWA** — Installable web app with offline support, service worker, and web app manifest.
 - **PDF Export** — Generate print-ready PDFs of any worksheet.
 - **118 Templates** — Pre-built templates across 14 disciplines.
@@ -17,11 +22,10 @@ Create learning activities, worksheets, and interactive lessons for any subject.
 ## Tech Stack
 
 - React 19 + TypeScript
-- Vite 7.2.4
-- Tailwind CSS 3.4.19
-- shadcn/ui
-- Framer Motion
-- PWA (vite-plugin-pwa)
+- Vite 7.2.4 + Tailwind CSS 3.4.19 + shadcn/ui
+- Framer Motion + Vaul (bottom sheets)
+- PWA (vite-plugin-pwa + Workbox)
+- html2canvas + jsPDF (export)
 
 ## Development
 
@@ -35,3 +39,18 @@ npm run dev
 ```bash
 npm run build
 ```
+
+## Deploy to Cloudflare
+
+```bash
+npx wrangler pages deploy dist --project-name=worksheet-forge
+```
+
+## Mobile Editor Controls
+
+1. **Tap Tools** → Pick element type
+2. **Tap canvas** → Places element (auto-switches to Select)
+3. **Double-tap element** → Opens edit/properties sheet
+4. **Long-press + drag** → Move element
+5. **Pinch** → Zoom canvas
+6. **Floating pill** → Edit/Delete selected element
