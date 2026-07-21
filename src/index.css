@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FAF6EF;
+    color: #292524;
+  }
+}
+
+/* Category accent CSS variables for inline use */
+:root {
+  --ela-accent: #5B8DB8;
+  --ela-light: #E8F1F8;
+  --art-accent: #9B7EDE;
+  --art-light: #F0EBFA;
+  --math-accent: #6BAA68;
+  --math-light: #E8F5E8;
+  --science-accent: #4A9B9B;
+  --science-light: #E3F2F2;
+  --social-accent: #D97757;
+  --social-light: #F3E5DD;
+  --general-accent: #78716C;
+  --general-light: #F0EBE0;
+}
+
+/* ═════════ Blackout Poetry Styles ═════════ */
+
+.blackout-solid {
+  background: #1a1a1a;
+  color: transparent;
+  border-radius: 2px;
+}
+
+.blackout-scribble {
+  position: relative;
+  color: transparent;
+  background: #f5f5f0;
+  border-radius: 2px;
+}
+
+.blackout-scribble::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='12' viewBox='0 0 40 12'%3E%3Cpath d='M2 3 Q6 1, 10 3 T18 3 T26 3 T34 3 T42 3' stroke='%23333' stroke-width='1.2' fill='none'/%3E%3Cpath d='M1 7 Q7 5, 13 7 T25 7 T37 7' stroke='%23555' stroke-width='0.8' fill='none'/%3E%3Cpath d='M3 10 Q9 8, 15 10 T27 10 T39 10' stroke='%23444' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 40px 12px;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.blackout-highlight {
+  background: rgba(255, 235, 59, 0.85);
+  color: #1a1a1a;
+  border-radius: 2px;
+}
+
+.blackout-pattern {
+  background: repeating-linear-gradient(
+    45deg,
+    #333,
+    #333 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  color: transparent;
+  border-radius: 2px;
+}
+
+.blackout-fade {
+  opacity: 0.15;
+  border-radius: 2px;
+}
+
+/* Matching game mismatch shake animation */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  15% { transform: translateX(-6px); }
+  30% { transform: translateX(5px); }
+  45% { transform: translateX(-4px); }
+  60% { transform: translateX(3px); }
+  75% { transform: translateX(-2px); }
+  90% { transform: translateX(1px); }
+}
+
+.animate-shake {
+  animation: shake 0.45s ease-in-out;
+}
